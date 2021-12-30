@@ -1,0 +1,102 @@
+import random
+cturn=0
+trun=0
+def firstbat():
+    trun=0
+    i=0
+    while i==0:
+        cbowl=random.randint(1,6)
+        bat=int(input("bat="))
+        print("comp ball=",cbowl)
+        print()
+        if cbowl==bat:
+            i=1
+            print("PLAYER OUT")
+        else:
+            trun=trun+bat
+    print("your score=",trun)
+    print()
+    print("NOW YOUR BOWLING TURN")
+    i=0
+    cturn=0
+    while i==0:
+        cbat=random.randint(1,6)
+        bowl=int(input("bowl="))
+        print("Comp bat+",cbat)
+        print()
+        if cbat==bowl:
+            i=1
+            print("COMP OUT")
+        else:
+            ctrun=ctrun + cbat
+        if ctrun>trun:
+            i=1
+            print("computer score=",ctrun)
+            print()
+            if trun>ctrun:
+                print("CONGRATS YOU WON THE MATCH")
+            else:
+                print("YOU LOST THE MATCH")
+def firstbowl():
+    ctrun=0
+    i=0
+    while i==0:
+        cbat=random.randint(1,6)
+        bowl=int(input("bowl="))
+        print("comp bat=",cbat)
+        print()
+        if cbat==bowl:
+            i=1
+            print("COMP OUT")
+        else:
+            ctrun=ctrun+cbat
+    print("computer score=",ctrun)
+    print()
+    print("NOW YOUR BATING TURN")
+    i=0
+    trun=0
+    while i==0:
+        cbowl=random.randint(1,6)
+        bat=int(input("bat="))
+        print("comp ball=",cbowl)
+        print()
+        if cbowl==bat:
+            i=1
+            print("PLAYER OUT")
+        else:
+            trun=trun+bat
+        if trun>ctrun:
+            i=1
+            print("your score=",trun)
+            print()
+            if trun>ctrun:
+                print("CONGRATS YOU WON THE MATCH")
+            else:
+                print("YOU LOST THE MATCH")
+tchoice=str(input("ODD or EVEN ="))
+toss=int(input("Enter your toss ="))
+ctoss=random.randint(1,6)
+print("computer toss=",ctoss)
+print()
+ttoss=toss+ctoss
+if tchoice=="EVEN" and ttoss%2==0:
+    bowlorbat=str(input("bowl or bat ="))
+    if bowlorbat=="bat":
+        firstbat()
+    else:
+        firstbowl()
+elif tchoice=="ODD" and ttoss%2!=0:
+    bowlorbat=str(input("bowl or bat ="))
+    if bowlorbat=="bat":
+        firstbat()
+    else:
+        firstbowl()
+else:
+    comp=random.randint(0,1)
+    batbowl=["bat","bowl"]
+    if batbowl[comp]=="bat":
+        print("COMPUTER CHOOSE TO BOWL")
+        firstbat()
+    else:
+        print("COMPUTER CHOOSE TO BAT")
+        firstbowl()
